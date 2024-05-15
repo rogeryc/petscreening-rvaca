@@ -1,4 +1,3 @@
-
 # Ruby on Rails Assesment
 
 Thank you for taking this assessment. We will have you work with a sample Pet Adoption Service.
@@ -49,7 +48,7 @@ We will run the tests locally on our machines. Please provide any documentation 
 4. **Documentation:** Clear and concise documentation covering setup instructions, usage guidelines, and any notable design decisions.
 5. **Adherence to Best Practices:** Consistent use of Rails conventions, adherence to RESTful principles, and implementation of secure coding practices.
 
-### Submission
+### Post Submission
 
 For submiting your assesment, please commit your changes into a new branch and open a new pull request after pushing your changes.
 
