@@ -16,6 +16,8 @@ We will run the tests locally on our machines. Please provide any documentation 
 1. Clone this repo
 2. Navigate to the project directory
 3. Run migrations and seeds.
+4. Create a personal Repo where you can use our clone as the main branch
+5. Create a feature branch for you to submit changes
 
 ## Requirements
 
@@ -50,8 +52,7 @@ We will run the tests locally on our machines. Please provide any documentation 
 4. **Documentation:** Clear and concise documentation covering setup instructions, usage guidelines, and any notable design decisions.
 5. **Adherence to Best Practices:** Consistent use of Rails conventions, adherence to RESTful principles, and implementation of secure coding practices.
 
-### Post Submission
-
-For submiting your assesment, please commit your changes into a new branch and open a new pull request after pushing your changes.
-
-After you submit your solution, we'll review it and talk it over with you.
+### Submitting your assessment
+1. Push your changes to the feature branch you created in the setup
+2. Share your personal repo with us so we can take a look
+3. After you submit your solution, we'll review it and talk it over with you.
