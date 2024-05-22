@@ -26,11 +26,10 @@ We will run the tests locally on our machines. Please provide any documentation 
         - Name
         - Kind
         - Breed
-    - Can list pets
-    - From the list, click to view the pet
-    - From the list, click to open a form to Edit the pet
-    - Submitting the form should save the Pet
+    - Can list, view, edit and update the pet
 
+- Add tests to confirm the current features
+- NOTE: For the following add tests to confirm funcationality
 - Add New Pet Features
     - Add the ability to give the pet a weight
 - Add New Owner Feature
