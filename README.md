@@ -20,25 +20,27 @@ We will run the tests locally on our machines. Please provide any documentation 
 ## Requirements
 
 - Current features
-  - Can create a pet:
-    - Name
-    - Kind
-    - Breed
-  - Can list pets
-- New Pet Features:
-  - From the list, click to view the pet
-  - From the list, click to open a form to Edit the pet
-  - Submitting the form should save the Pet
-  - Add ability to give the pet a weight
-- New Owner Feature:
-  - Add a model for owners with basic information
-  - Make sure an owner can have many pets
-  - We don't need a FrontEnd for this, just be able to do it via the Rails Console
-- New API Feature:
-  - Use <https://dogapi.dog/>
-  - given one of our pets Breeds, choose some more information we may want
-    - How would you store the extra information
-    - Make that happen
+    - Can create a pet
+        - Name
+        - Kind
+        - Breed
+    - Can list pets
+
+- Add New Pet Features
+    - From the list, click to view the pet
+    - From the list, click to open a form to Edit the pet
+    - Submitting the form should save the Pet
+    - Add ability to give the pet a weight
+- Add New Owner Feature
+    - Add a model for owners with basic information
+    - Make sure an owner can have many pets
+    - We don't need a FrontEnd for this, just be able to do it via the Rails Console
+- New API Feature
+    - Use https://dogapi.dog/
+    - given one of our pets Breeds, choose some more information we may want
+        - How would you store the extra information
+        - Add the necessary code to store the information you choose to the database
+    - Add ability for the Owner to pick a pet and get breed information about that pet
 
 ### **Evaluation Criteria**
 
