@@ -27,12 +27,12 @@ We will run the tests locally on our machines. Please provide any documentation 
         - Kind
         - Breed
     - Can list pets
-
-- Add New Pet Features
     - From the list, click to view the pet
     - From the list, click to open a form to Edit the pet
     - Submitting the form should save the Pet
-    - Add ability to give the pet a weight
+
+- Add New Pet Features
+    - Add the ability to give the pet a weight
 - Add New Owner Feature
     - Add a model for owners with basic information
     - Make sure an owner can have many pets
