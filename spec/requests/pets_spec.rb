@@ -1,6 +1,25 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe PetsController, type: :controller do
+  let(:valid_attributes) do
+    {
+      name: Faker::Creature::Dog.name,
+      kind: Faker::Creature::Animal.name,
+      breed: Faker::Creature::Dog.breed,
+      weight: Faker::Number.decimal(l_digits: 2)
+    }
+  end
+  let(:invalid_attributes) do
+    {
+      name: nil,
+      kind: Faker::Creature::Animal.name,
+      breed: Faker::Creature::Dog.breed,
+      weight: Faker::Number.decimal(l_digits: 2)
+    }
+  end
+
   describe 'GET #index' do
     before do
       create_list(:pet, 2)
@@ -28,28 +47,11 @@ RSpec.describe PetsController, type: :controller do
   end
 
   describe 'POST #create' do
-    let(:valid_attributes) { 
-      { 
-        name: Faker::Creature::Dog.name, 
-        kind: Faker::Creature::Animal.name, 
-        breed: Faker::Creature::Dog.breed,
-        weight: Faker::Number.decimal(l_digits: 2)
-      } 
-    }
-    let(:invalid_attributes) {
-      {
-        name: nil,
-        kind: Faker::Creature::Animal.name,
-        breed: Faker::Creature::Dog.breed,
-        weight: Faker::Number.decimal(l_digits: 2)
-      }
-    }
-    
     context 'with valid params' do
       it 'creates a new Pet' do
-        expect {
+        expect do
           post :create, params: { pet: valid_attributes }
-        }.to change(Pet, :count).by(1)
+        end.to change(Pet, :count).by(1)
       end
 
       it 'renders a JSON response with the new pet' do
@@ -72,7 +74,7 @@ RSpec.describe PetsController, type: :controller do
 
   describe 'PUT #update' do
     let(:pet) { create(:pet) }
-  
+
     context 'with valid params' do
       let(:new_attributes) { { name: 'Buddy' } }
 
@@ -104,9 +106,9 @@ RSpec.describe PetsController, type: :controller do
     let!(:pet) { create(:pet) }
 
     it 'destroys the requested pet' do
-      expect {
+      expect do
         delete :destroy, params: { id: pet.id }
-      }.to change(Pet, :count).by(-1)
+      end.to change(Pet, :count).by(-1)
     end
   end
 end

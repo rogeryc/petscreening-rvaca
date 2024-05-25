@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe BreedData do
@@ -6,8 +8,10 @@ RSpec.describe BreedData do
     let(:response_body) do
       {
         'data' => [
-          { 'attributes' => { 'name' => 'Labrador Retriever', 'life' => { 'max' => 10, 'min' => 2 }, 'description' => 'Nice dog' } },
-          { 'attributes' => { 'name' => 'German Shepherd', 'life' => { 'max' => 8, 'min' => 1 }, 'description' => 'Other nice dog' } }
+          { 'attributes' => { 'name' => 'Labrador Retriever', 'life' => { 'max' => 10, 'min' => 2 },
+                              'description' => 'Nice dog' } },
+          { 'attributes' => { 'name' => 'German Shepherd', 'life' => { 'max' => 8, 'min' => 1 },
+                              'description' => 'Other nice dog' } }
         ]
       }.to_json
     end

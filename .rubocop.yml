@@ -1,0 +1,18 @@
+Style/Documentation:
+  Enabled: false
+
+Layout/LineLength:
+  Max: 150
+  Exclude:
+    - 'bin/bundle'
+
+AllCops:
+  NewCops: enable
+  Exclude:
+    - 'db/**/*'
+
+Metrics/BlockLength:
+  Enabled: false
+
+Metrics/MethodLength:
+  Max: 15
