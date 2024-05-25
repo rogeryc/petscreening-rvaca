@@ -1,0 +1,26 @@
+<p>
+  <h3>Breed Info:</h3>
+  <% if breed_info %>
+    <p>
+      <strong>Name:</strong>
+      <%= breed_info.name %>
+    </p>
+
+    <p>
+      <strong>Description:</strong>
+      <%= breed_info.description %>
+    </p>
+
+    <p>
+      <strong>Min life <small>(expressed in years)</small>:</strong>
+      <%= breed_info.min_life %>
+    </p>
+
+    <p>
+      <strong>Max life <small>(expressed in years)</small>:</strong>
+      <%= breed_info.max_life %>
+    </p>
+  <% else %>
+    No information available for this breed.
+  <% end %>
+</p>

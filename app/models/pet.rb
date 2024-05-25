@@ -3,4 +3,5 @@ class Pet < ApplicationRecord
   validates :weight, numericality: { greater_than_or_equal_to: 0 }, allow_nil: true
 
   belongs_to :owner, optional: true
+  belongs_to :breed_info, optional: true
 end

@@ -1,6 +1,6 @@
 <p style="color: green"><%= notice %></p>
 
-<%= render @pet %>
+<%= render @pet, breed_info: @breed_info %>
 
 <div>
   <%= link_to "Edit this pet", edit_pet_path(@pet) %> |

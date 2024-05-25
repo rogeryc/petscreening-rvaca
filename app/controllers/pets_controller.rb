@@ -8,6 +8,7 @@ class PetsController < ApplicationController
 
   # GET /pets/1 or /pets/1.json
   def show
+    @breed_info = BreedData.call(@pet.breed)
   end
 
   # GET /pets/new
