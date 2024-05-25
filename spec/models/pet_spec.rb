@@ -36,15 +36,15 @@ RSpec.describe Pet, type: :model do
         expect(pet).to be_valid
       end
 
-      it 'is valid when greater than zero' do
+      it 'is valid when greater than or equal to zero' do
         pet = Pet.new(name: 'Buddy', kind: 'Dog', breed: 'Labrador', weight: 10)
+        expect(pet).to be_valid
+        pet.weight = 0
         expect(pet).to be_valid
       end
 
       it 'is valid when lower than or equeal to zero' do
-        pet = Pet.new(name: 'Buddy', kind: 'Dog', breed: 'Labrador', weight: 0)
-        expect(pet).to be_invalid
-        pet.weight = -1
+        pet = Pet.new(name: 'Buddy', kind: 'Dog', breed: 'Labrador', weight: -1)
         expect(pet).to be_invalid
       end
     end
