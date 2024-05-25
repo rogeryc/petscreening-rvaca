@@ -1,5 +1,5 @@
 class PetsController < ApplicationController
-  before_action :set_pet, only: %i[ show edit update destroy ]
+  before_action :set_pet, only: %i[ show edit update destroy retrieve_breed_info ]
 
   # GET /pets or /pets.json
   def index
@@ -8,7 +8,21 @@ class PetsController < ApplicationController
 
   # GET /pets/1 or /pets/1.json
   def show
-    @breed_info = BreedData.call(@pet.breed)
+    @breed_info = @pet.breed_info
+  end
+
+  # GET /pets/1/breed_info
+  def retrieve_breed_info
+    unless @pet.breed_info
+      breed_data = BreedData.call(@pet.breed)
+
+      return redirect_to pet_url(@pet), alert: "We couldn't find info related to this breed. Try again with a different breed name." unless breed_data
+
+      @breed_info = BreedInfo.find_or_create_by(name: breed_data.name, min_life: breed_data.min_life, max_life: breed_data.max_life, description: breed_data.description, hypoallergenic: breed_data.hypoallergenic)
+      @pet.update(breed_info: @breed_info)
+    end
+
+    redirect_to pet_url(@pet)
   end
 
   # GET /pets/new
@@ -61,7 +75,7 @@ class PetsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_pet
-      @pet = Pet.find(params[:id])
+      @pet = Pet.includes(:breed_info).find(params[:id])
     end
 
     # Only allow a list of trusted parameters through.

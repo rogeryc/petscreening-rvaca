@@ -21,6 +21,11 @@
       <%= breed_info.max_life %>
     </p>
   <% else %>
-    No information available for this breed.
+    <p>
+      No information available for this breed.
+    </p>
+    <div>
+      <%= link_to "Add breed info", retrieve_breed_info_pet_path %>
+    </div>
   <% end %>
 </p>
