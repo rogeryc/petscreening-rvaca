@@ -5,12 +5,7 @@ RSpec.describe Pet, type: :model do
     it { should validate_presence_of(:name) }
     it { should validate_presence_of(:kind) }
     it { should validate_presence_of(:breed) }
-  end
-
-  describe 'validations' do
-    it { should validate_presence_of(:name) }
-    it { should validate_presence_of(:kind) }
-    it { should validate_presence_of(:breed) }
+    it { should validate_numericality_of(:weight) }
   end
 
   describe 'attributes' do
@@ -31,6 +26,25 @@ RSpec.describe Pet, type: :model do
     describe '#breed' do
       it 'is invalid when nil' do
         pet = Pet.new(name: 'Buddy', kind: 'Dog', breed: nil)
+        expect(pet).to be_invalid
+      end
+    end
+
+    describe '#weight' do
+      it 'is valid when nil' do
+        pet = Pet.new(name: 'Buddy', kind: 'Dog', breed: 'Labrador', weight: nil)
+        expect(pet).to be_valid
+      end
+
+      it 'is valid when greater than zero' do
+        pet = Pet.new(name: 'Buddy', kind: 'Dog', breed: 'Labrador', weight: 10)
+        expect(pet).to be_valid
+      end
+
+      it 'is valid when lower than or equeal to zero' do
+        pet = Pet.new(name: 'Buddy', kind: 'Dog', breed: 'Labrador', weight: 0)
+        expect(pet).to be_invalid
+        pet.weight = -1
         expect(pet).to be_invalid
       end
     end
