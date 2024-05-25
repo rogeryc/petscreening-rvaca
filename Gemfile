@@ -68,5 +68,6 @@ group :test do
 end
 
 group :development, :test do
+  gem 'shoulda-matchers'
   gem 'rspec-rails', '~> 6.1.0'
 end
