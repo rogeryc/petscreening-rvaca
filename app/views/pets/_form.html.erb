@@ -32,6 +32,11 @@
   </div>
 
   <div>
+    <%= form.label :owner_id, style: "display: block" %>
+    <%= form.collection_select :owner_id, Owner.all, :id, :name, prompt: true %>
+  </div>
+
+  <div>
     <%= form.submit %>
   </div>
 <% end %>
