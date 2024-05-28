@@ -14,4 +14,15 @@
     <%= pet.breed %>
   </p>
 
+  <p>
+    <strong>Weight:</strong>
+    <%= pet.weight %>
+  </p>
+
+  <% if pet.owner.present? %>
+    <p>
+      <strong>Owner Name:</strong>
+      <%= pet.owner.name %>
+    </p>
+  <% end %>
 </div>

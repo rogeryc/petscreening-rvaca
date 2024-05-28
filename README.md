@@ -55,3 +55,28 @@ We will run the tests locally on our machines. Please provide any documentation 
 1. Push your changes to the feature branch you created in the setup
 2. Share your personal repo with us so we can take a look
 3. After you submit your solution, we'll review it and talk it over with you.
+
+
+### How to test the assessment result
+
+## Test the app
+
+1. Clone the repo and checkout to the branch `f-rvaca`run `bundle install`
+2. Run `bundle install`
+3. Create and seed the database
+4. Run the server and navigate to a pet from index view. In the show view, hit the link "Add breed info" and check the info wasn't loaded.
+5. Edit a pet and change the breed to "Caucasian Shepherd Dog" and hit the same link again. Check there's a new section for breed info.
+
+## Run rspec tests
+
+1. Run `rspec` from console and verify there aren't errors.
+
+### TODO's
+
+After finishing some tasks in the required time, there are some pending tasks to accomplish, in order to have a better and more secure code:
+
+- Add model tests to BreedInfo model (similar to Pet and Owner)
+- Add system tests to check some stuff like: 'When hitting Add Breed Info there's an alert if no info is found'
+- Refactor the BreedData service to save data in other place and keep single responsability principle
+- Improve how to get info from Dog's breeds API and how to save the desired data
+- Define what attributes are required or have some other restrictions, like lenght or numericality
